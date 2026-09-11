@@ -143,7 +143,7 @@
       var e = Math.floor((Date.now() - start) / 1000);
       var text = pad(Math.floor(e / 3600)) + ':' + pad(Math.floor((e % 3600) / 60)) + ':' + pad(e % 60);
       timer.textContent = text;
-      if (e >= 60) title.textContent = '您已经在这片沙漠待了 ' + text;
+      if (e >= 60) title.textContent = '您已经在这里待了 ' + text;
     }, 1000);
 
     if (tipWrap && tip) {

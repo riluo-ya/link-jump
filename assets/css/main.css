@@ -1,20 +1,17 @@
 /* ============================================================
    link-jump · 全局样式
-   极致简约 · 黑白灰 · 无装饰 · 响应式
+   白纸级极简 · 无边框 · 无阴影 · 无装饰 · 只留文字与留白
    ============================================================ */
 
-/* ---------- 主题变量 ---------- */
 :root {
   --bg: #ffffff;
-  --fg: #111111;
-  --muted: #6b6b6b;
-  --line: #e0e0e0;
+  --fg: #000000;
+  --muted: #9b9b9b;
 }
 html.dark {
-  --bg: #0a0a0a;
-  --fg: #f2f2f2;
-  --muted: #8a8a8a;
-  --line: #2a2a2a;
+  --bg: #000000;
+  --fg: #ffffff;
+  --muted: #757575;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,162 +30,97 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 20px;
-  line-height: 1.7;
+  padding: 32px 24px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- 通用按钮：直角细边框 ---------- */
-.btn {
-  display: inline-block;
-  padding: 8px 22px;
-  font-size: 14px;
-  font-family: inherit;
-  background: none;
+/* ---------- 通用链接 / 按钮：纯文字，无边框 ---------- */
+a, .btn {
   color: var(--fg);
-  border: 1px solid var(--fg);
-  border-radius: 0;
-  cursor: pointer;
   text-decoration: none;
-  transition: background .15s ease, color .15s ease;
+  background: none;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color .15s ease;
 }
-.btn:hover, .btn:focus-visible {
-  background: var(--fg);
-  color: var(--bg);
+a:hover, a:focus-visible, .btn:hover, .btn:focus-visible {
+  color: var(--muted);
   outline: none;
 }
 
 /* ---------- 跳转页 ---------- */
-.jump, .loading { text-align: center; max-width: 480px; width: 100%; }
+.jump, .loading { text-align: center; max-width: 420px; width: 100%; }
 
-.tip { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+.tip { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
 .target {
-  display: inline-block;
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 15px;
   word-break: break-all;
-  border-bottom: 2px solid var(--fg);
-  padding-bottom: 2px;
 }
 
 .risk {
-  margin: 26px auto;
-  max-width: 420px;
+  margin: 28px auto;
+  max-width: 360px;
   font-size: 13px;
   color: var(--muted);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 10px 0;
 }
 
-.countdown { font-size: 13px; color: var(--muted); margin: 22px 0; }
-.countdown span {
-  display: block;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.3;
-  font-variant-numeric: tabular-nums;
-}
+.countdown { font-size: 14px; margin: 26px 0 20px; }
+.countdown span { font-variant-numeric: tabular-nums; }
 
-/* Loading：细线转圈 + 文字 */
-.loading .spinner {
-  width: 26px;
-  height: 26px;
-  margin: 0 auto 14px;
-  border: 2px solid var(--line);
-  border-top-color: var(--fg);
-  border-radius: 50%;
-  animation: spin .9s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.loading-text { font-size: 13px; color: var(--muted); }
+.loading-text { font-size: 14px; color: var(--muted); }
 
-/* ---------- 404 页：纯文字 ---------- */
+/* ---------- 404 页 ---------- */
 .page-404 { text-align: center; }
-.desert { max-width: 480px; width: 100%; }
+.desert { max-width: 420px; width: 100%; }
 .desert-code {
-  font-size: 72px;
-  font-weight: 800;
-  letter-spacing: 4px;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 6px;
   line-height: 1.2;
 }
-.desert-title { font-size: 17px; font-weight: 500; margin: 14px 0 6px; }
+.desert-title { font-size: 15px; font-weight: 400; margin: 18px 0 10px; }
 .desert-timer {
-  font-size: 28px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 12px;
-}
-.desert-tip-wrap { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
-.desert-link { margin-top: 4px; }
-
-/* ---------- 介绍页：分隔线式 ---------- */
-.page-intro { justify-content: flex-start; }
-.intro-header { text-align: center; margin: 44px 0 30px; }
-.intro-title { font-size: 34px; font-weight: 800; letter-spacing: 1px; }
-.intro-sub { margin-top: 6px; font-size: 14px; color: var(--muted); }
-.intro {
-  width: 100%;
-  max-width: 560px;
-}
-.intro-block {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  min-width: 0;
-  overflow: hidden;
-}
-.intro-block h2 { font-size: 15px; margin-bottom: 8px; }
-.intro-block p { font-size: 14px; line-height: 1.8; color: var(--muted); }
-.intro-list { list-style: none; }
-.intro-list li {
   font-size: 14px;
-  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
   color: var(--muted);
-  padding-left: 14px;
-  position: relative;
+  margin-bottom: 8px;
 }
-.intro-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: .9em;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--fg);
-}
+.desert-tip-wrap { font-size: 13px; color: var(--muted); margin-bottom: 34px; }
+.desert-link { font-size: 14px; }
+
+/* ---------- 介绍页 ---------- */
+.page-intro { justify-content: flex-start; }
+.intro-header { text-align: center; margin: 48px 0 40px; }
+.intro-title { font-size: 26px; font-weight: 400; letter-spacing: 2px; }
+.intro-sub { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.intro { width: 100%; max-width: 560px; }
+.intro-block { margin-bottom: 30px; }
+.intro-block h2 { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+.intro-block p { font-size: 14px; line-height: 1.9; color: var(--muted); }
+.intro-list { list-style: none; }
+.intro-list li { font-size: 14px; line-height: 1.9; color: var(--muted); }
 .intro-list code, .intro-block code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12.5px;
-  background: none;
-  border-bottom: 1px solid var(--line);
-  padding: 0 2px;
+  color: var(--fg);
   word-break: break-all;
 }
 .intro-block a { color: var(--fg); }
 .intro-code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  line-height: 1.7;
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  padding: 14px;
-  overflow-x: auto;
+  font-size: 12.5px;
+  line-height: 1.8;
   color: var(--fg);
-  margin-top: 8px;
+  margin-top: 10px;
+  overflow-x: auto;
+  white-space: pre;
 }
 .intro-footer {
-  margin: 30px 0 18px;
+  margin: 24px 0 20px;
   font-size: 12px;
   color: var(--muted);
   text-align: center;
-}
-
-/* ---------- 响应式 ---------- */
-@media (max-width: 480px) {
-  .target { font-size: 17px; }
-  .desert-code { font-size: 56px; }
-  .countdown span { font-size: 34px; }
-  .intro-title { font-size: 28px; }
-  .intro-header { margin: 34px 0 24px; }
 }
