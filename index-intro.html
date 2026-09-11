@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="link-jump：长链接与短链接跳转工具的项目介绍">
+<title>link-jump · 项目介绍</title>
+<script>
+  (function () { var h = new Date().getHours(); document.documentElement.classList.toggle('dark', h >= 19 || h < 7); })();
+</script>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="page-intro">
+
+<header class="intro-header">
+  <h1 class="intro-title">link-jump</h1>
+  <p class="intro-sub">长链接 &amp; 短链接跳转工具 · 纯静态 · 无需后端</p>
+</header>
+
+<main class="intro">
+
+  <section class="intro-block">
+    <h2>这是什么</h2>
+    <p>一个极简跳转页：通过 URL 参数识别长链接或短链接识别码，倒计时后自动跳转；内置深色/浅色主题、DNS 预解析加速，以及趣味 404 沙漠彩蛋。</p>
+  </section>
+
+  <section class="intro-block">
+    <h2>使用方式</h2>
+    <ul class="intro-list">
+      <li>长链接：<code>index.html?t=https://example.com</code></li>
+      <li>短链接：<code>index.html?s=example</code></li>
+      <li>在线演示：<a href="index.html?s=example">index.html?s=example</a></li>
+    </ul>
+  </section>
+
+  <section class="intro-block">
+    <h2>目录结构</h2>
+    <pre class="intro-code">link-jump/
+├── index.html          # 主跳转入口（长短链共用）
+├── 404.html            # 沙漠彩蛋 404 页
+├── index-intro.html    # 项目介绍页
+├── ls/                 # 短链配置目录
+│   └── example.json    # 内置示例 s=example
+├── wordbank.json       # 404 随机提示词词库
+└── assets/
+    ├── css/main.css
+    └── js/main.js</pre>
+  </section>
+
+  <section class="intro-block">
+    <h2>新增短链</h2>
+    <p>在 <code>ls/</code> 目录新建 <code>识别码.json</code> 即可，无需修改任何源码。文件格式：</p>
+    <pre class="intro-code">{
+  "name": "站点展示名称",
+  "link": "https://目标链接"
+}</pre>
+  </section>
+
+</main>
+
+<footer class="intro-footer">link-jump · 可部署至 GitHub Pages / Vercel / Netlify</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
